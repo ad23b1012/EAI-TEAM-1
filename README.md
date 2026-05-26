@@ -9,7 +9,7 @@
 
 | Name | Roll Number | Department / Major |
 | :--- | :--- | :--- |
-| **Abhishek** (Team Lead) | `AD23B1012` | Artificial Intelligence & Data Science |
+| **Abhishek** | `AD23B1012` | Artificial Intelligence & Data Science |
 | **Lalith Karthik** | `CS23B1042` | Computer Science & Engineering |
 | **Jashwanth G** | `AD23B1020` | Artificial Intelligence & Data Science |
 | **N Murthy** | `AD23B1034` | Artificial Intelligence & Data Science |
