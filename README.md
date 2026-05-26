@@ -25,16 +25,16 @@ Using the **ShanghaiTech (SHTech)** video anomaly detection dataset, we construc
 
 Because deploying large Vision Transformers on resource-constrained embedded and edge devices is challenging due to high latency, memory, and power constraints, this project focuses on **four critical paradigms of model compression and optimization**:
 
-1. **Model Pruning (Sparsification)**
-2. **Model Quantization (Low Precision)**
-3. **Knowledge Distillation (KD)**
+1. **Model Pruning (Several approaches considered, including parsification)**
+2. **Model Quantization (At different precision levels)**
+3. **Knowledge Distillation (Baseline as Teacher, DeiT-Tiny as Student)**
 4. **Token Reduction (ToMe & DynamicViT)**
 
 ---
 
 ## Technical Architecture & Methodology
 
-The core code is consolidated into `notebookaf675a5a93.ipynb` which guides the user through data extraction, model training, multiple optimization experiments, latency/memory profiling, and visualization.
+The core code is consolidated into `embedded_vit_anomaly_detection.ipynb` which guides the user through data extraction, model training, multiple optimization experiments, latency/memory profiling, and visualization. Please note that this is the only relevant project file, and the project can be reproduced by running the same with sufficient resources.
 
 ```
                   ┌──────────────────────────────────────────────┐
@@ -128,16 +128,17 @@ pip install -q transformers==4.41.0 \
    * Training videos: `<DATA_DIR>/training/videos/`
    * Testing frames: `<DATA_DIR>/testing/frames/`
    * Anomaly masks: `<DATA_DIR>/testing/test_frame_mask/`
+   Please ensure all paths are appropriate and contain the relevant contents.
 
 3. **Open and Run the Jupyter Notebook:**
    Launch Jupyter Lab or Notebook:
    ```bash
-   jupyter notebook notebookaf675a5a93.ipynb
+   jupyter notebook embedded_vit_anomaly_detection.ipynb
    ```
-   * Execute **CELL 1 to CELL 7** to install dependencies, set up configuration paths, and pre-extract frames from training videos.
-   * Execute **CELL 8 to CELL 13** to build the reconstruction architecture, configure caching helpers, and set up checkpoint directories.
-   * Execute **CELL 14 to CELL 18** to train the baseline model (`ViT-B/16`) and log its baseline ROC-AUC, latency, and memory metrics.
-   * Execute **CELL 19 to CELL 38** sequentially to run all optimization experiments (Pruning, Quantization, Distillation, Token Reduction) and generate comparative plots.
+   * Execute **Section 1** - install dependencies, set up configuration paths, and pre-extract frames from training videos.
+   * Execute **Section 2** - to build the reconstruction architecture, configure caching helpers, and set up checkpoint directories.
+   * Execute **Section 3** to train the baseline model (`ViT-B/16`) and log its baseline ROC-AUC, latency, and memory metrics.
+   * Execute **Section 4** sequentially to run all optimization experiments (Pruning, Quantization, Distillation, Token Reduction) and generate comparative plots.
 
 ---
 
@@ -150,7 +151,8 @@ Upon running all experiments, the notebook automatically:
    * **Quantization Benchmarks:** Model Size (MB) and Latency (ms) comparison across FP32, FP16, PTQ INT8, QAT INT8, and NF4 INT4.
    * **Distillation Improvement:** ROC-AUC curves comparing Student-Only, Teacher-Only, and Distilled Student models.
    * **Token Reduction Profile:** Inference speed (tokens/sec) vs. Reconstruction error for varying ToMe merging ratios and DynamicViT keep ratios.
-3. Prints a **Final Summary Table** listing each model's:
+3. We also expect these results to be the same as the ones reported in the "Report.pdf", submitted alongside this README.md, due to the use of seed.
+4. Prints a **Final Summary Table** listing each model's:
    * Model Name & Applied Optimization Method
    * Total Parameters (Millions)
    * Disk Size (MB)
@@ -162,16 +164,6 @@ This summary table serves as the primary verification artifact to prove the corr
 
 ---
 
-## Submission Package Structure (ZIP/RAR)
-
-For university submission as instructed by the professor, the compressed archive should be prepared as follows:
-
-```
-EAI-TEAM-1.zip
-├── notebookaf675a5a93.ipynb         # Source code & experiment notebook
-├── README.md                        # Documentation (this file)
-└── individual_contributions.pdf     # Single PDF containing signed and dated handwritten notes (≤100 words per member)
-```
 
 ### Individual Contributions Breakdown 
 * **Abhishek (AD23B1012):** Contributed to improving embedded deployment efficiency through model compression techniques. Work involved implementing quantization methods such as FP16 and INT8, as well as knowledge distillation from the ViT-B/16 teacher model to a DeiT-Tiny student model. Continuously evaluated model size, inference latency, and accuracy trade-offs, while also assisting in debugging and analyzing optimized configurations for embedded anomaly detection.
