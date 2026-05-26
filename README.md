@@ -80,9 +80,7 @@ Quantization maps 32-bit floating-point weights and activations to lower bit-wid
 * **BitsAndBytes INT4 (NF4):** Employs NormalFloat4 quantization to compress the backbone into 4 bits, ideal for extreme edge constraints.
 
 ### 3. Knowledge Distillation (KD)
-We compress a large teacher model (`ViT-B/16`) into a highly efficient student model (`DeiT-Tiny`). We design a custom multi-component loss function (`KDLoss`):
-$$\mathcal{L}_{KD} = w_{recon}\mathcal{L}_{MSE}(S_{recon}, T_{recon}) + w_{logit}\mathcal{L}_{logit} + w_{feat}\mathcal{L}_{feat} + w_{attn}\mathcal{L}_{attn}$$
-This forces the student to mimic the reconstruction capabilities, final representations, intermediate layer features, and self-attention patterns of the teacher.
+We compress a large teacher model (`ViT-B/16`) into a highly efficient student model (`DeiT-Tiny`). We design a custom multi-component loss function (`KDLoss`), as well, forcing the student to mimic the reconstruction capabilities, final representations, intermediate layer features, and self-attention patterns of the teacher.
 
 ### 4. Token Reduction
 Vision Transformers process a fixed number of tokens. We accelerate inference by reducing the token count dynamically inside the backbone:
