@@ -1,7 +1,8 @@
 # ViT-AD-Opt: Vision Transformer Optimization Suite for Anomaly Detection
 
-**Course Project — Embedded AI**  
+**Course Project - Embedded AI**  
 **Submitted to:** **DR. DUBACHARLA GYANESHWAR**  
+**GitHub Repo:** https://github.com/ad23b1012/EAI-TEAM-1.git
 
 ---
 
