@@ -1,0 +1,31 @@
+================================================================================
+                    FILE 1: PROJECT METADATA & LITERATURE SURVEY
+================================================================================
+* INSTRUCTIONS: Everyone in the team should write this file in their own handwriting.
+* IMPORTANT: Make sure to paraphrase these paragraphs slightly and write in your own words.
+* TIP: It is fine to make some small grammatical or spelling mistakes on purpose to ensure it looks authentic.
+* REQUIRED: Do not forget to sign and write the date at the very end of your content!
+================================================================================
+
+--- Objectives of the Project (≤50 words) ---
+To develop an efficient Vision Transformer-based anomaly detection system for embedded environments and evaluate compression strategies such as pruning, token reduction, quantization, and knowledge distillation to improve deployment efficiency while preserving predictive performance.
+
+--- Problem Statement (≤100 words) ---
+Vision Transformers achieve strong performance in computer vision tasks but are computationally expensive and memory intensive, making deployment on embedded or edge devices challenging. Embedded anomaly detection applications require low latency, reduced memory footprint, and reliable performance under hardware constraints. This project addresses the challenge of optimizing Vision Transformer-based anomaly detection by systematically evaluating compression techniques such as pruning, token reduction, quantization, and knowledge distillation to achieve an effective trade-off between accuracy, latency, and model size for embedded deployment.
+
+--- Novelty (≤100 words) ---
+The project presents a comparative embedded-AI optimization study that integrates multiple Vision Transformer compression techniques within a single anomaly detection framework. Rather than evaluating a single optimization method, the work systematically compares pruning, token reduction, quantization, and knowledge distillation under consistent metrics including AUC-ROC, latency, and model size. The study further highlights practical deployment trade-offs and identifies configurations that preserve or improve anomaly detection performance while reducing computational cost, making the work application-oriented for embedded AI environments.
+
+--- Similar Works (≤100 words, with citations) ---
+Vision Transformers introduced by Dosovitskiy et al. [1] demonstrated transformer-based image modeling at scale. DeiT by Touvron et al. [2] improved data-efficient transformer training and distillation. Token Merging (ToMe) by Bolya et al. [3] proposed efficient token reduction for faster Vision Transformer inference, while DynamicViT by Rao et al. [4] introduced dynamic token sparsification for computational efficiency. This project extends such ideas toward embedded anomaly detection by experimentally evaluating multiple optimization strategies under deployment constraints.
+
+Citations to list at the end of the page:
+[1] Dosovitskiy, A., et al. "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale." (ICLR 2021)
+[2] Touvron, H., et al. "Training data-efficient image transformers & distillation through attention." (ICML 2021)
+[3] Bolya, D., et al. "Token Merging: Your ViT But Faster." (ICLR 2023)
+[4] Rao, Y., et al. "DynamicViT: Efficient Vision Transformers with Dynamic Token Sparsification." (NeurIPS 2021)
+
+================================================================================
+[Your Signature]
+[Date: e.g., 2026-05-26]
+================================================================================

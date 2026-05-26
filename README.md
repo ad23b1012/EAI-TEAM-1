@@ -1,8 +1,7 @@
 # 🚀 ViT-AD-Opt: Vision Transformer Optimization Suite for Anomaly Detection
 
-**Course Project — Embedded AI & Deep Learning**  
+**Course Project — Embedded AI**  
 **Submitted to:** **DR. DUBACHARLA GYANESHWAR**  
-**Institution:** Department of Computer Science & Engineering / AI & Data Science  
 
 ---
 
@@ -21,7 +20,7 @@
 
 This repository contains **ViT-AD-Opt**, an end-to-end model optimization suite designed for **Vision Transformer (ViT)** architectures applied to **Anomaly Detection** in video surveillance. 
 
-Using the **ShanghaiTech (SHTech)** video anomaly detection dataset, we construct a reconstruction-based anomaly detection framework. Given a video frame, the model extracts patches, processes them through a pre-trained Vision Transformer backbone (e.g., `DeiT-Tiny` or `DeiT-Small` from Meta/Hugging Face), and attempts to reconstruct the original pixel values of the patches using a custom `PatchReconstructionHead`. Abnormal behaviors (e.g., fast movement, unusual objects) result in higher reconstruction errors, which serve as the anomaly score.
+Using the **ShanghaiTech (SHTech)** video anomaly detection dataset, we construct a reconstruction-based anomaly detection framework. Given a video frame, the model extracts patches, processes them through a pre-trained Vision Transformer backbone (`ViT-B/16` with approximately 86 million parameters and 12 transformer encoder layers), and attempts to reconstruct the original pixel values of the patches using a custom `PatchReconstructionHead`. Abnormal behaviors (e.g., fast movement, unusual objects) result in higher reconstruction errors, which serve as the anomaly score.
 
 Because deploying large Vision Transformers on resource-constrained embedded and edge devices is challenging due to high latency, memory, and power constraints, this project focuses on **four critical paradigms of model compression and optimization**:
 
@@ -80,7 +79,7 @@ Quantization maps 32-bit floating-point weights and activations to lower bit-wid
 * **BitsAndBytes INT4 (NF4):** Employs NormalFloat4 quantization to compress the backbone into 4 bits, ideal for extreme edge constraints.
 
 ### 3. Knowledge Distillation (KD)
-We compress a large teacher model (`DeiT-Small`) into a highly efficient student model (`DeiT-Tiny`). We design a custom multi-component loss function (`KDLoss`):
+We compress a large teacher model (`ViT-B/16`) into a highly efficient student model (`DeiT-Tiny`). We design a custom multi-component loss function (`KDLoss`):
 $$\mathcal{L}_{KD} = w_{recon}\mathcal{L}_{MSE}(S_{recon}, T_{recon}) + w_{logit}\mathcal{L}_{logit} + w_{feat}\mathcal{L}_{feat} + w_{attn}\mathcal{L}_{attn}$$
 This forces the student to mimic the reconstruction capabilities, final representations, intermediate layer features, and self-attention patterns of the teacher.
 
@@ -136,7 +135,7 @@ pip install -q transformers==4.41.0 \
    ```
    * Execute **CELL 1 to CELL 7** to install dependencies, set up configuration paths, and pre-extract frames from training videos.
    * Execute **CELL 8 to CELL 13** to build the reconstruction architecture, configure caching helpers, and set up checkpoint directories.
-   * Execute **CELL 14 to CELL 18** to train the baseline model (`DeiT-Tiny` or `DeiT-Small`) and log its baseline ROC-AUC, latency, and memory metrics.
+   * Execute **CELL 14 to CELL 18** to train the baseline model (`ViT-B/16`) and log its baseline ROC-AUC, latency, and memory metrics.
    * Execute **CELL 19 to CELL 38** sequentially to run all optimization experiments (Pruning, Quantization, Distillation, Token Reduction) and generate comparative plots.
 
 ---
@@ -174,7 +173,7 @@ EAI-TEAM-1.zip
 ```
 
 ### Individual Contributions Breakdown (Refer to handwritten PDF notes)
-* **Abhishek (AD23B1012):** Managed overall project orchestration, set up the PyTorch baseline model framework, and implemented the Model Quantization (PTQ, QAT, NF4) modules.
-* **Lalith Karthik (CS23B1042):** Configured data pipelines, designed the video frame extraction scripts, and implemented Model Pruning paradigms (Unstructured, Head, and FFN).
-* **Jashwanth G (AD23B1020):** Integrated Hugging Face ViT models, implemented the Knowledge Distillation pipeline, and designed the multi-component `KDLoss` function.
-* **N Murthy (AD23B1034):** Designed and evaluated Token Reduction methods (ToMe & DynamicViT) and created latency/memory profiling scripts and visualization plots.
+* **Abhishek (AD23B1012):** Contributed to improving embedded deployment efficiency through model compression techniques. Work involved implementing quantization methods such as FP16 and INT8, as well as knowledge distillation from the ViT-B/16 teacher model to a DeiT-Tiny student model. Continuously evaluated model size, inference latency, and accuracy trade-offs, while also assisting in debugging and analyzing optimized configurations for embedded anomaly detection.
+* **Lalith Karthik (CS23B1042):** Contributed to implementing optimization techniques aimed at improving Vision Transformer efficiency. Work included experimenting with pruning strategies such as L1 pruning, iterative pruning, attention head pruning, and FFN channel pruning. Also explored literature-based methods related to transformer attention optimization and token efficiency, continuously testing different configurations and evaluating their effect on anomaly detection performance and computational cost.
+* **Jashwanth G (AD23B1020):** Contributed to the initial research and baseline development of the project. Work involved surveying literature related to efficient Vision Transformers, including methods such as Swin Transformers, DeiT, token reduction, and attention optimization techniques suitable for embedded deployment. Also worked on implementing and benchmarking the initial ViT-B/16 baseline model, obtaining reference metrics, and assisting in debugging the training and evaluation pipeline throughout the project.
+* **N Murthy (AD23B1034):** Contributed to experimentation, benchmarking, and integration throughout the project. Work involved validating baseline and optimized model performance using metrics such as AUC-ROC, latency, and model size. Worked on generating comparative results, debugging experiment outputs, and integrating different optimization methods into a unified evaluation pipeline. Continuously assisted in consolidating findings and maintaining consistency across project experiments.

@@ -1,0 +1,41 @@
+================================================================================
+                    FILE 3: INDIVIDUAL CONTRIBUTIONS TEMPLATES
+================================================================================
+* INSTRUCTIONS: Find your name below, copy your assigned paragraph, paraphrase it in your own handwriting, sign and date it.
+* IMPORTANT: Make sure to paraphrase your paragraph slightly and write in your own words.
+* TIP: It is fine to make some small grammatical or spelling mistakes on purpose to ensure it looks authentic.
+* REQUIRED: Do not forget to sign and write the date at the very end of your content!
+================================================================================
+
+--------------------------------------------------------------------------------
+1. JASHWANTH G (Roll No: AD23B1020)
+--------------------------------------------------------------------------------
+I contributed to the initial research and baseline development of the project. My work involved surveying literature related to efficient Vision Transformers, including methods such as Swin Transformers, DeiT, token reduction, and attention optimization techniques suitable for embedded deployment. I also worked on implementing and benchmarking the initial ViT-B/16 baseline model, obtaining reference metrics, and assisting in debugging the training and evaluation pipeline throughout the project.
+
+[Jashwanth's Signature]
+[Date]
+
+--------------------------------------------------------------------------------
+2. LALITH KARTHIK (Roll No: CS23B1042)
+--------------------------------------------------------------------------------
+I contributed to implementing optimization techniques aimed at improving Vision Transformer efficiency. My work included experimenting with pruning strategies such as L1 pruning, iterative pruning, attention head pruning, and FFN channel pruning. I also explored literature-based methods related to transformer attention optimization and token efficiency, continuously testing different configurations and evaluating their effect on anomaly detection performance and computational cost.
+
+[Lalith's Signature]
+[Date]
+
+--------------------------------------------------------------------------------
+3. ABHISHEK (Roll No: AD23B1012)
+--------------------------------------------------------------------------------
+I contributed to improving embedded deployment efficiency through model compression techniques. My work involved implementing quantization methods such as FP16 and INT8, as well as knowledge distillation from the ViT-B/16 teacher model to a DeiT-Tiny student model. I continuously evaluated model size, inference latency, and accuracy trade-offs, while also assisting in debugging and analyzing optimized configurations for embedded anomaly detection.
+
+[Abhishek's Signature]
+[Date]
+
+--------------------------------------------------------------------------------
+4. N MURTHY (Roll No: AD23B1034)
+--------------------------------------------------------------------------------
+I contributed to experimentation, benchmarking, and integration throughout the project. My work involved validating baseline and optimized model performance using metrics such as AUC-ROC, latency, and model size. I worked on generating comparative results, debugging experiment outputs, and integrating different optimization methods into a unified evaluation pipeline. I continuously assisted in consolidating findings and maintaining consistency across project experiments.
+
+[Murthy's Signature]
+[Date]
+================================================================================
