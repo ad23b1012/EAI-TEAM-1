@@ -1,11 +1,11 @@
-# 🚀 ViT-AD-Opt: Vision Transformer Optimization Suite for Anomaly Detection
+# ViT-AD-Opt: Vision Transformer Optimization Suite for Anomaly Detection
 
 **Course Project — Embedded AI**  
 **Submitted to:** **DR. DUBACHARLA GYANESHWAR**  
 
 ---
 
-## 👥 Team Members & Info
+## Team Members & Info
 
 | Name | Roll Number | Department / Major |
 | :--- | :--- | :--- |
@@ -16,7 +16,7 @@
 
 ---
 
-## 📝 Project Overview
+## Project Overview
 
 This repository contains **ViT-AD-Opt**, an end-to-end model optimization suite designed for **Vision Transformer (ViT)** architectures applied to **Anomaly Detection** in video surveillance. 
 
@@ -31,7 +31,7 @@ Because deploying large Vision Transformers on resource-constrained embedded and
 
 ---
 
-## 🏗️ Technical Architecture & Methodology
+## Technical Architecture & Methodology
 
 The core code is consolidated into `notebookaf675a5a93.ipynb` which guides the user through data extraction, model training, multiple optimization experiments, latency/memory profiling, and visualization.
 
@@ -90,7 +90,7 @@ Vision Transformers process a fixed number of tokens. We accelerate inference by
 
 ---
 
-## 🛠️ Required Dependencies & Libraries
+## Required Dependencies & Libraries
 
 To run this project, make sure you have a Python environment with PyTorch and CUDA support. You can install all necessary packages by running:
 
@@ -114,7 +114,7 @@ pip install -q transformers==4.41.0 \
 
 ---
 
-## 🚀 Steps to Run the Code
+## Steps to Run the Code
 
 1. **Clone the Repository:**
    ```bash
@@ -140,7 +140,7 @@ pip install -q transformers==4.41.0 \
 
 ---
 
-## 📊 Expected Outputs & Verification
+## Expected Outputs & Verification
 
 Upon running all experiments, the notebook automatically:
 1. Logs execution statistics, hardware parameters, carbon footprints (using `codecarbon`), and profiling times.
@@ -161,7 +161,7 @@ This summary table serves as the primary verification artifact to prove the corr
 
 ---
 
-## 📂 Submission Package Structure (ZIP/RAR)
+## Submission Package Structure (ZIP/RAR)
 
 For university submission as instructed by the professor, the compressed archive should be prepared as follows:
 
@@ -172,7 +172,7 @@ EAI-TEAM-1.zip
 └── individual_contributions.pdf     # Single PDF containing signed and dated handwritten notes (≤100 words per member)
 ```
 
-### Individual Contributions Breakdown (Refer to handwritten PDF notes)
+### Individual Contributions Breakdown 
 * **Abhishek (AD23B1012):** Contributed to improving embedded deployment efficiency through model compression techniques. Work involved implementing quantization methods such as FP16 and INT8, as well as knowledge distillation from the ViT-B/16 teacher model to a DeiT-Tiny student model. Continuously evaluated model size, inference latency, and accuracy trade-offs, while also assisting in debugging and analyzing optimized configurations for embedded anomaly detection.
 * **Lalith Karthik (CS23B1042):** Contributed to implementing optimization techniques aimed at improving Vision Transformer efficiency. Work included experimenting with pruning strategies such as L1 pruning, iterative pruning, attention head pruning, and FFN channel pruning. Also explored literature-based methods related to transformer attention optimization and token efficiency, continuously testing different configurations and evaluating their effect on anomaly detection performance and computational cost.
 * **Jashwanth G (AD23B1020):** Contributed to the initial research and baseline development of the project. Work involved surveying literature related to efficient Vision Transformers, including methods such as Swin Transformers, DeiT, token reduction, and attention optimization techniques suitable for embedded deployment. Also worked on implementing and benchmarking the initial ViT-B/16 baseline model, obtaining reference metrics, and assisting in debugging the training and evaluation pipeline throughout the project.
