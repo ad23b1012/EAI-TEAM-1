@@ -19,7 +19,7 @@
 
 ## Project Overview
 
-This repository contains **ViT-AD-Opt**, an end-to-end model optimization suite designed for **Vision Transformer (ViT)** architectures applied to **Anomaly Detection** in video surveillance. 
+This repository contains **Efficient Vision Transformers**, an end-to-end model optimization suite designed for **Vision Transformer (ViT)** architectures applied to **Anomaly Detection** in video surveillance. 
 
 Using the **ShanghaiTech (SHTech)** video anomaly detection dataset, we construct a reconstruction-based anomaly detection framework. Given a video frame, the model extracts patches, processes them through a pre-trained Vision Transformer backbone (`ViT-B/16` with approximately 86 million parameters and 12 transformer encoder layers), and attempts to reconstruct the original pixel values of the patches using a custom `PatchReconstructionHead`. Abnormal behaviors (e.g., fast movement, unusual objects) result in higher reconstruction errors, which serve as the anomaly score.
 
