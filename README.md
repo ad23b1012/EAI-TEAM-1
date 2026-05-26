@@ -1,4 +1,4 @@
-# ViT-AD-Opt: Vision Transformer Optimization Suite for Anomaly Detection
+# Efficient Vision Transformers for Embedded Anomaly Detection: A complete Optimization Suite
 
 **Course Project - Embedded AI**  
 **Submitted to:** **DR. DUBACHARLA GYANESHWAR**  
@@ -151,7 +151,7 @@ Upon running all experiments, the notebook automatically:
    * **Quantization Benchmarks:** Model Size (MB) and Latency (ms) comparison across FP32, FP16, PTQ INT8, QAT INT8, and NF4 INT4.
    * **Distillation Improvement:** ROC-AUC curves comparing Student-Only, Teacher-Only, and Distilled Student models.
    * **Token Reduction Profile:** Inference speed (tokens/sec) vs. Reconstruction error for varying ToMe merging ratios and DynamicViT keep ratios.
-3. We also expect these results to be the same as the ones reported in the "Report.pdf", submitted alongside this README.md, due to the use of seed.
+3. We also expect these results to be the same as the ones reported in the "Embedded_AI_Report.pdf", submitted alongside this README.md, due to the use of seed.
 4. Prints a **Final Summary Table** listing each model's:
    * Model Name & Applied Optimization Method
    * Total Parameters (Millions)
